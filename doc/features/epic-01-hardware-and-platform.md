@@ -33,6 +33,7 @@
 - **Epic:** EPIC-01
 - **Priority:** High
 - **Complexity:** Medium
+- **Background:** The target OS strategy depends on the exact device variant and its real maintenance status; choosing a ROM based only on brand or model family is not sufficient.
 - **Acceptance Criteria:**
   - [ ] Exact device codename and supported variants are documented.
   - [ ] Official or community ROM availability and maintenance status are verified.

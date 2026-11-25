@@ -33,6 +33,7 @@
 - **Epic:** EPIC-02
 - **Priority:** High
 - **Complexity:** High
+- **Background:** A reproducible build only becomes useful when the resulting image is installed and exercised on the actual target device.
 - **Acceptance Criteria:**
   - [ ] The device boots the agreed OS build.
   - [ ] Display, touch, Wi-Fi, audio, cameras, sensors, charging and sleep/wake are tested where applicable.

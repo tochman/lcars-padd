@@ -4,7 +4,7 @@
 
 ---
 
-> Provide a safe and maintainable way to distribute PADD application updates and, where applicable, operating-system updates. Updates must be verifiable, recoverable and understandable to the device owner.
+> Provide a safe and maintainable way to distribute PADD application updates. Operating-system updates remain the responsibility of the device manufacturer or the user's chosen Android distribution. Updates must be verifiable, recoverable and understandable to the device owner.
 
 **Stories:** US-0801
 
@@ -13,18 +13,19 @@
 ## User Stories
 
 **US-0801: Update the PADD application and device platform safely** 📋 Planned
-- As a **PADD administrator**, in order to **keep devices maintained without compromising their integrity**, I would like to **have a documented and recoverable update process for the application and operating system**.
+- As a **PADD user or administrator**, in order to **keep PADD current without compromising application integrity**, I would like to **receive verifiable application updates through a documented and recoverable update process**.
 - **Epic:** EPIC-08
 - **Priority:** Medium
 - **Complexity:** High
 - **Background:** Application and operating-system updates have different trust and recovery requirements and must not be treated as one undifferentiated update mechanism.
 - **Acceptance Criteria:**
-  - [ ] Application updates and OS/firmware updates have separate strategies.
+  - [ ] The PADD application update strategy is documented independently of device OS updates.
+  - [ ] PADD does not attempt to replace or silently manage manufacturer/ROM system updates.
   - [ ] Signing, artifact integrity and versioning requirements are defined.
   - [ ] Release channels and staged rollout options are documented.
   - [ ] Rollback and recovery behaviour is documented and tested where feasible.
   - [ ] Update prerequisites, including power and network requirements, are clear.
   - [ ] Updates do not silently bypass user or administrator control.
-- **Notes:** A custom updater should not be built until the selected device and ROM update path are understood.
-- **Dependencies:** US-0101, US-0102, US-0201, US-0202.
+- **Notes:** Prefer standard Android app distribution and update mechanisms. Do not build an OS updater; system updates remain outside PADD's core responsibility.
+- **Dependencies:** US-0201, US-0202.
 - **Implementation issue:** [#13 — Define OTA updates, release and recovery distribution](../../issues/13)

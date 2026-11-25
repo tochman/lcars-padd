@@ -1,68 +1,60 @@
-# EPIC-01: Hardware and platform
+# EPIC-01: Android compatibility
 
 > Epic file — for an overview of all epics see [FEATURES.md](../FEATURES.md).
 
 ---
 
-> Establish a reliable physical and operating-system foundation for the PADD. The selected tablet must be maintainable, supported by a suitable Android distribution and capable of delivering the intended always-available, touch-first experience.
+> Define the Android platform and compatibility contract for PADD as a native application. PADD should work across a representative range of Android tablets without requiring a project-selected device, custom ROM, or privileged system image.
 
 **Stories:** US-0101, US-0102
 
-**Status (2026-11-25):** 🚧 US-0101 in progress; US-0102 planned.
+**Status (2026-11-25):** 📋 US-0101 and US-0102 planned.
+
+## Architectural direction
+
+PADD is a hardware-independent Android application. The project does not build, fork, install, or distribute Android or LineageOS images. Users remain responsible for their device and operating-system updates; PADD uses standard Android application installation and update mechanisms.
+
+Compatibility is defined by Android platform versions, adaptive layout behaviour, and runtime-detected capabilities rather than by a single tablet model or vendor ROM. LineageOS and manufacturer-specific distributions may be included in testing where useful, but they are not prerequisites. Specific devices may be used as test fixtures, but none is an exclusive product target.
 
 ## User Stories
 
-**US-0101: Select the target PADD tablet** 📋 Planned
-- As a **PADD project owner**, in order to **build on hardware that can be maintained over time**, I would like to **select a tablet based on verified technical compatibility, usability and availability**.
+**US-0101: Define the Android tablet compatibility matrix** 📋 Planned
+- As a **PADD developer**, in order to **support a range of Android tablets predictably**, I would like to **have documented platform requirements and a representative reference-device matrix**.
 - **Epic:** EPIC-01
 - **Priority:** High
 - **Complexity:** Medium
-- **Background:** The hardware decision constrains display layout, device permissions, performance, power use and every device-specific implementation choice.
+- **Background:** Build and UI decisions must accommodate a range of Android versions, screen sizes, densities, orientations and window configurations rather than one selected tablet.
 - **Acceptance Criteria:**
-  - [ ] Candidate tablets are compared for bootloader access, community support, display, performance, battery, connectivity and sensors.
-  - [ ] LineageOS or a viable Android alternative is verified for the exact model and regional variant.
-  - [ ] The selected model, memory/storage configuration and device codename are documented.
-  - [ ] Known limitations, accessories and recovery risks are recorded.
-  - [ ] A primary target and, where practical, a fallback are identified.
-- **Notes:** Hardware-dependent decisions should remain provisional until evidence has been collected.
+  - [ ] A compatibility policy and representative test matrix are documented.
+  - [ ] The minimum Android version and API requirements are proposed for review.
+  - [ ] The matrix covers materially different tablet form factors, screen sizes, memory profiles, Android versions and optional hardware capabilities.
+  - [ ] Optional hardware capabilities are identified separately from core application requirements.
+  - [ ] Reference devices are explicitly described as test fixtures, not exclusive supported models.
+  - [ ] Known limitations and a process for adding tested devices and reporting compatibility are documented.
 - **Dependencies:** None.
-- **Implementation issue:** [#2 — Select tablet hardware and define the device baseline](../../issues/2)
+- **Implementation issue:** [#2 — Define the Android tablet compatibility and reference-device matrix](../../issues/2)
 
-### Initial hardware assessment (2026-11-25)
-
-The project owner's existing **Samsung Galaxy Tab A9+ 5G (SM-X216B)**, obtained through Telenor in Sweden, is the primary evaluation candidate. This is a candidate, not yet a final hardware/OS approval.
-
-| Area | Finding |
-|---|---|
-| Display and form factor | Samsung Sweden lists an 11-inch 1920 x 1200 display with up to 90 Hz refresh rate. |
-| Performance and storage | The model uses Qualcomm's Snapdragon 695 platform. Samsung lists 4 GB/64 GB and 8 GB/128 GB configurations for this model; the owner's exact configuration is not yet known. |
-| Battery and connectivity | Samsung lists a 7040 mAh battery and 5G connectivity. |
-| Device codename | `gta9p` is used by an unofficial community LineageOS device tree for SM-X216B; it is not an official LineageOS designation for a supported device. |
-| OS support | SM-X216B is not listed as a supported device in the official LineageOS device directory. An unofficial `lineage-23.2` device tree exists for this exact model, but its source/build instructions do not establish that a complete ROM is released, bootable, or suitable for daily use. |
-| Bootloader and recovery | Unlock availability has not been verified on this Swedish/Telenor unit. A community Galaxy Tab A9+ guide describes an unlock flow and warns that unlocking wipes the device and irreversibly trips Knox; it does not confirm this unit's CSC or current firmware. |
-| Fallback | None selected. The existing tablet is the practical initial target; consider a fallback only if device-level validation or OS support fails. |
-
-**Initial recommendation:** Proceed with the SM-X216B as the target for application work on Samsung's stock Android baseline, but do not approve a custom ROM or device-specific OS build yet. Before an OS decision, identify the installed RAM/storage and CSC, verify OEM unlocking availability without unlocking the bootloader, and validate a candidate build plus recovery on the actual device. Do not unlock or flash the owner's tablet without explicit approval.
-
-**Evidence**
-- [Samsung Sweden: Galaxy Tab A9+ 5G specifications](https://www.samsung.com/se/tablets/galaxy-tab-a/galaxy-tab-a9-plus-5g-mystic-navy-64gb-sm-x216bdbaeub/)
-- [Samsung India: Galaxy Tab A9+ 5G specifications](https://www.samsung.com/in/tablets/galaxy-tab-a/galaxy-tab-a9-plus-5g-mystic-silver-64gb-sm-x216bzsains/)
-- [Official LineageOS device directory](https://wiki.lineageos.org/devices/)
-- [Unofficial SM-X216B `gta9p` LineageOS device tree and build instructions](https://github.com/bthavanish/android_device_samsung_gta9p/tree/lineage-23.2)
-- [XDA community discussion: Galaxy Tab A9+ bootloader unlocking](https://xdaforums.com/t/unlocking-bootloader-on-galaxy-tab-a9-android-14.4678684/)
-
-**US-0102: Establish the supported operating-system baseline** 📋 Planned
-- As a **PADD maintainer**, in order to **run a secure and supportable Android platform**, I would like to **select and document the OS version and ROM strategy for the target tablet**.
+**US-0102: Define the Android API and device-capability strategy** 📋 Planned
+- As a **PADD developer**, in order to **keep core functionality available across different tablets**, I would like to **have documented API requirements and a strategy for detecting optional device capabilities**.
 - **Epic:** EPIC-01
 - **Priority:** High
 - **Complexity:** Medium
-- **Background:** The target OS strategy depends on the exact device variant and its real maintenance status; choosing a ROM based only on brand or model family is not sufficient.
+- **Background:** Sensors, microphones, cellular connectivity and privileged system controls vary across tablets and Android distributions; they must not be assumed for core application use.
 - **Acceptance Criteria:**
-  - [ ] Exact device codename and supported variants are documented.
-  - [ ] Official or community ROM availability and maintenance status are verified.
-  - [ ] Android version, kernel/device-tree status and vendor firmware requirements are recorded.
-  - [ ] Bootloader, installation, recovery and rollback constraints are documented.
-  - [ ] A go/no-go recommendation is recorded for the chosen OS.
-- **Notes:** LineageOS is preferred where device support is credible; it is not an unconditional requirement.
+  - [ ] Minimum and target Android API levels are documented with rationale.
+  - [ ] Core, optional and unsupported capabilities are classified.
+  - [ ] Permission and capability detection requirements are documented.
+  - [ ] No core feature depends on undocumented or manufacturer-specific APIs.
+  - [ ] Optional privileged integrations have explicit compatibility boundaries.
+  - [ ] The compatibility strategy does not require a custom ROM or OS image.
 - **Dependencies:** US-0101.
-- **Implementation issue:** [#3 — Define the LineageOS target and compatibility strategy](../../issues/3)
+- **Implementation issue:** [#3 — Define Android API and device-capability compatibility](../../issues/3)
+
+## Candidate test fixtures
+
+The Samsung Galaxy Tab A9+ 5G (SM-X216B) is one potential test fixture. It does not define the supported-device boundary or require a custom ROM. Its exact RAM/storage and regional software configuration need to be recorded only if used for device-specific manual validation. No bootloader unlock or firmware modification is required by this epic.
+
+## References
+
+- [Android large-screen app quality guidelines](https://developer.android.com/docs/quality-guidelines/large-screen-app-quality)
+- [Adaptive layouts in Compose](https://developer.android.com/develop/ui/compose/layouts/adaptive)

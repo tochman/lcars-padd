@@ -21,9 +21,9 @@
 - **Acceptance Criteria:**
   - [ ] The application launches into a stable PADD home screen.
   - [ ] Primary modules are reachable through consistent navigation.
-  - [ ] Layout adapts to the selected tablet's dimensions and orientation.
+  - [ ] Layout adapts to a range of tablet dimensions, aspect ratios, density settings and orientations.
   - [ ] Navigation and transient state survive relevant lifecycle events.
   - [ ] The shell remains useful without network access or AI services.
 - **Notes:** The shell hosts feature modules; it should not absorb their domain logic.
-- **Dependencies:** US-0302, US-0202.
+- **Dependencies:** US-0302, US-0201.
 - **Implementation issue:** [#8 — Build the PADD launcher and home shell](../../issues/8)

@@ -1,0 +1,9 @@
+<resources>
+    <style name="Theme.LcarsPadd" parent="android:style/Theme.Material.NoActionBar">
+        <item name="android:colorAccent">#4FA3D9</item>
+        <item name="android:navigationBarColor">#05060A</item>
+        <item name="android:statusBarColor">#05060A</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>

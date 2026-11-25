@@ -46,6 +46,21 @@ The issue tracker is used for implementation work and discussion. The feature do
 
 The minimum Android version and detailed compatibility policy will be established through the platform compatibility work. No particular tablet model or Android distribution is a product prerequisite.
 
+## Build and run the preview
+
+The current app scaffold uses a provisional minimum Android API level of 26; this is a development setting, not the final compatibility commitment. It uses JDK 17 or newer, Gradle 9.8.0 (pinned by the wrapper), Android Gradle Plugin 9.5.0, Kotlin Compose compiler plugin 2.4.10, and Android SDK Platform 37.
+
+```sh
+./gradlew :app:assembleDebug
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+```
+
+To run the Compose UI test on a connected device or emulator:
+
+```sh
+./gradlew :app:connectedDebugAndroidTest
+```
+
 ## Project status
 
-The project is in its initial discovery and architecture phase. See [EPIC-01](doc/features/epic-01-hardware-and-platform.md), [EPIC-02](doc/features/epic-02-android-build-and-foundation.md) and the [feature overview](doc/FEATURES.md) for current scope.
+The first Compose preview is a UI scaffold; it does not yet read device or network data or provide functional feature modules. See [EPIC-01](doc/features/epic-01-hardware-and-platform.md), [EPIC-02](doc/features/epic-02-android-build-and-foundation.md) and the [feature overview](doc/FEATURES.md) for current scope.

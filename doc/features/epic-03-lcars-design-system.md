@@ -29,6 +29,7 @@ T.H.A.D.E.U.S. is a design reference, not a runtime dependency. The Android impl
 - **Epic:** EPIC-03
 - **Priority:** High
 - **Complexity:** Medium
+- **Background:** The desktop T.H.A.D.E.U.S. implementation is a visual reference, but Android needs explicit touch-first rules and native platform semantics.
 - **Acceptance Criteria:**
   - [ ] Colours, typography, spacing, proportions, frame geometry, borders and semantic states are documented.
   - [ ] Component behaviour is specified for actions, navigation, readouts, meters, status indicators and dialogs.
@@ -43,6 +44,7 @@ T.H.A.D.E.U.S. is a design reference, not a runtime dependency. The Android impl
 - **Epic:** EPIC-03
 - **Priority:** High
 - **Complexity:** High
+- **Background:** A shared component library prevents each screen from implementing its own interpretation of the PADD visual language.
 - **Acceptance Criteria:**
   - [ ] A reusable Compose theme and semantic design tokens are implemented.
   - [ ] Core panels, frames, elbow elements, pills, segmented bars, readouts, meters, headings and dialogs are available.

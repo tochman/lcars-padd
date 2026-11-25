@@ -17,6 +17,7 @@
 - **Epic:** EPIC-05
 - **Priority:** Medium
 - **Complexity:** High
+- **Background:** Some desired device behaviours are not available to ordinary Android applications. The project must understand platform boundaries before choosing an implementation.
 - **Acceptance Criteria:**
   - [ ] A capability matrix distinguishes ordinary app features from device-owner and system-image capabilities.
   - [ ] Requirements for permissions, provisioning and privileged integration are documented.
@@ -31,6 +32,7 @@
 - **Epic:** EPIC-05
 - **Priority:** Medium
 - **Complexity:** Medium
+- **Background:** Device health is useful to both users and maintainers, but diagnostics must not become an unnecessary telemetry or data-collection system.
 - **Acceptance Criteria:**
   - [ ] The diagnostics view shows supported battery, charging, storage, memory, thermal, connectivity and sensor information.
   - [ ] Unsupported or permission-restricted metrics are clearly identified.

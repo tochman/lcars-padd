@@ -17,6 +17,7 @@
 - **Epic:** EPIC-01
 - **Priority:** High
 - **Complexity:** Medium
+- **Background:** The hardware decision constrains display layout, device permissions, performance, power use and every device-specific implementation choice.
 - **Acceptance Criteria:**
   - [ ] Candidate tablets are compared for bootloader access, community support, display, performance, battery, connectivity and sensors.
   - [ ] LineageOS or a viable Android alternative is verified for the exact model and regional variant.

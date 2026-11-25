@@ -17,6 +17,7 @@
 - **Epic:** EPIC-04
 - **Priority:** High
 - **Complexity:** High
+- **Background:** The PADD should behave as a coherent tablet environment, not merely as a set of disconnected feature screens.
 - **Acceptance Criteria:**
   - [ ] The application launches into a stable PADD home screen.
   - [ ] Primary modules are reachable through consistent navigation.

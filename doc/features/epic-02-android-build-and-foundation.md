@@ -17,6 +17,7 @@
 - **Epic:** EPIC-02
 - **Priority:** High
 - **Complexity:** High
+- **Background:** Platform builds can be expensive and fragile. A repeatable environment reduces contributor-specific setup and makes future maintenance possible.
 - **Acceptance Criteria:**
   - [ ] Host OS, required packages, JDK, repo tool and build dependencies are documented.
   - [ ] Source checkout and target configuration are scripted or unambiguously documented.

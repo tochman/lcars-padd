@@ -17,6 +17,7 @@
 - **Epic:** EPIC-07
 - **Priority:** Medium
 - **Complexity:** High
+- **Background:** Voice is an alternative input method, not a replacement for touch. Its activation, privacy and command authority must remain explicit.
 - **Acceptance Criteria:**
   - [ ] Supported interaction modes (such as push-to-talk) and the privacy model are documented.
   - [ ] A small, explicitly allowlisted command set is implemented and tested.

@@ -17,6 +17,7 @@
 - **Epic:** EPIC-08
 - **Priority:** Medium
 - **Complexity:** High
+- **Background:** Application and operating-system updates have different trust and recovery requirements and must not be treated as one undifferentiated update mechanism.
 - **Acceptance Criteria:**
   - [ ] Application updates and OS/firmware updates have separate strategies.
   - [ ] Signing, artifact integrity and versioning requirements are defined.

@@ -23,8 +23,8 @@
   - [ ] Requirements for permissions, provisioning and privileged integration are documented.
   - [ ] No undocumented privilege escalation is required.
   - [ ] Safe escape, maintenance and recovery paths are defined.
-  - [ ] Implemented behaviours are validated on the target device.
-- **Dependencies:** US-0101, US-0102, US-0202, US-0401.
+  - [ ] Implemented behaviours are validated on representative Android versions and device configurations.
+- **Dependencies:** Android compatibility requirements from EPIC-01, US-0401. Any privileged integration remains optional.
 - **Implementation issue:** [#9 — Investigate and implement SystemUI integration](../../issues/9)
 
 **US-0502: Inspect device health and diagnostics locally** 📋 Planned
@@ -39,5 +39,5 @@
   - [ ] Logs can be inspected or exported through an explicit action without exposing secrets or personal content.
   - [ ] Sampling frequency and battery impact are documented.
   - [ ] Data remains local by default; remote transmission requires a separately approved design.
-- **Dependencies:** US-0202, US-0401.
+- **Dependencies:** US-0401. Device metrics must be capability-detected and unavailable metrics must not impair core use.
 - **Implementation issue:** [#10 — Add device telemetry and engineering diagnostics](../../issues/10)

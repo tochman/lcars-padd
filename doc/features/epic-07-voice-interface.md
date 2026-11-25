@@ -27,5 +27,5 @@
   - [ ] The PADD remains fully usable when microphone access is denied or voice is disabled.
   - [ ] Battery, latency and offline behaviour are measured and documented.
 - **Notes:** Wake-word operation is not assumed; it requires a separate evaluation of privacy, hardware and battery impact.
-- **Dependencies:** US-0302, US-0401, US-0202.
+- **Dependencies:** US-0302, US-0401. Microphone availability and permission must be detected at runtime.
 - **Implementation issue:** [#12 — Design and implement the voice interface](../../issues/12)

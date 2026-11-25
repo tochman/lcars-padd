@@ -29,14 +29,14 @@ T.H.A.D.E.U.S. is a design reference, not a runtime dependency. The Android impl
 - **Epic:** EPIC-03
 - **Priority:** High
 - **Complexity:** Medium
-- **Background:** The desktop T.H.A.D.E.U.S. implementation is a visual reference, but Android needs explicit touch-first rules and native platform semantics.
+- **Background:** The desktop T.H.A.D.E.U.S. implementation is a visual reference, but Android needs explicit touch-first rules, native platform semantics and adaptive behaviour across varied screen sizes and aspect ratios.
 - **Acceptance Criteria:**
   - [ ] Colours, typography, spacing, proportions, frame geometry, borders and semantic states are documented.
   - [ ] Component behaviour is specified for actions, navigation, readouts, meters, status indicators and dialogs.
   - [ ] Passive readouts are clearly distinguished from interactive controls.
   - [ ] Contrast, focus, touch target, accessibility and reduced-motion requirements are explicit.
   - [ ] Android-specific adaptations from the T.H.A.D.E.U.S. desktop implementation are documented.
-- **Dependencies:** US-0101 (final display dimensions should be reconciled with the hardware choice).
+- **Dependencies:** US-0101 (the design must use adaptive rules rather than fixed dimensions for one tablet).
 - **Implementation issue:** [#6 — Specify the LCARS-inspired design system for Android](../../issues/6)
 
 **US-0302: Implement the native Compose component library** 📋 Planned
@@ -51,5 +51,5 @@ T.H.A.D.E.U.S. is a design reference, not a runtime dependency. The Android impl
   - [ ] Components expose relevant normal, focused, disabled, warning and alert states.
   - [ ] Accessibility semantics, touch targets and reduced-motion behaviour are tested.
   - [ ] A component gallery or demo screen demonstrates the library.
-- **Dependencies:** US-0301, US-0202.
+- **Dependencies:** US-0301, US-0201.
 - **Implementation issue:** [#7 — Implement the native LCARS Compose component library](../../issues/7)
